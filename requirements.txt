@@ -1,47 +1,7 @@
-streamlit
+streamlit==1.40.2
 pandas==2.2.3
-matplotlib==3.6.3
-scikit-learn==1.4.2
 numpy==1.25.2
-folium==0.16.0
-transformers==4.46.2
-truststore @ file:///C:/b/abs_55z7b3r045/croot/truststore_1695245455435/work
-tweepy==4.14.0
-Twisted @ file:///C:/b/abs_e7yqd811in/croot/twisted_1708702883769/work
-twisted-iocpsupport @ file:///C:/ci_311/twisted-iocpsupport_1676447612160/work
-typeguard==4.2.1
-typing_extensions==4.11.0
-tzdata @ file:///croot/python-tzdata_1690578112552/work
-tzlocal @ file:///C:/ci_311/tzlocal_1676439620276/work
-uc-micro-py @ file:///C:/ci_311/uc-micro-py_1676457695423/work
-ujson @ file:///C:/ci_311/ujson_1676434714224/work
-Unidecode @ file:///tmp/build/80754af9/unidecode_1614712377438/work
-urllib3==1.26.18
-validators @ file:///tmp/build/80754af9/validators_1612286467315/work
-visions==0.7.4
-w3lib @ file:///C:/b/abs_957begrwnl/croot/w3lib_1708640020760/work
-waitress==3.0.0
-watchdog @ file:///C:/ci_311/watchdog_1676457923624/work
-wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
-webencodings==0.5.1
-websocket-client @ file:///C:/ci_311/websocket-client_1676426063281/work
-Werkzeug @ file:///C:/b/abs_8578rs2ra_/croot/werkzeug_1679489759009/work
-whatthepatch @ file:///C:/ci_311/whatthepatch_1678402578113/work
-widgetsnbextension @ file:///C:/b/abs_derxhz1biv/croot/widgetsnbextension_1701273671518/work
-win-inet-pton @ file:///C:/ci_311/win_inet_pton_1676425458225/work
-wordcloud==1.9.3
-wrapt @ file:///C:/ci_311/wrapt_1676432805090/work
-xarray @ file:///C:/b/abs_5bkjiynp4e/croot/xarray_1689041498548/work
-xgboost @ file:///C:/b/abs_0fh_d4x2ng/croot/xgboost-split_1713973188995/work
-xlwings @ file:///C:/ci_311_rebuilds/xlwings_1679013429160/work
-xyzservices @ file:///C:/ci_311/xyzservices_1676434829315/work
-y-py @ file:///C:/b/abs_b7f5go6r0j/croot/y-py_1683662173571/work
-yapf @ file:///tmp/build/80754af9/yapf_1615749224965/work
-yarg==0.1.9
-yarl @ file:///C:/b/abs_8bxwdyhjvp/croot/yarl_1701105248152/work
-ydata-profiling==4.8.3
-ypy-websocket @ file:///C:/b/abs_4e65ywlnv8/croot/ypy-websocket_1684172103529/work
-zict @ file:///C:/b/abs_780gyydtbp/croot/zict_1695832899404/work
-zipp @ file:///C:/b/abs_b0beoc27oa/croot/zipp_1704206963359/work
-zope.interface @ file:///C:/ci_311/zope.interface_1676439868776/work
-zstandard==0.19.0
+matplotlib==3.7.2
+scikit-learn==1.4.2
+setuptools>=65.5.0
+wheel
