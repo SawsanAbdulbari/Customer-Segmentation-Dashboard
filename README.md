@@ -29,8 +29,8 @@ This project is a Customer Segmentation Dashboard that provides insights into cu
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/sawsanabdulbari/Customer-Segmentation-Dashboard.git
-   cd Customer-Segmentation-Dashboard
+   git clone https://github.com/yourusername/customer-segmentation-dashboard.git
+   cd customer-segmentation-dashboard
    ```
 
 2. Install the required packages:
