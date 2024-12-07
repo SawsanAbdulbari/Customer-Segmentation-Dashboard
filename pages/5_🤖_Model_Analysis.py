@@ -295,7 +295,7 @@ with col2:
 with col3:
     input_monetary = st.number_input("Monetary Value", min_value=0.0, value=100.0)
 
-if st.button("Predict Segment"):
+if st.button(":point_right: Predict Segment"):
     try:
         # Scale the input
         input_scaled = scaler.transform([[input_recency, input_frequency, input_monetary]])

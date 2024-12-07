@@ -131,18 +131,18 @@ cleaned_data["InvoiceDate"] = pd.to_datetime(cleaned_data["InvoiceDate"])
 # Now you can use the .dt accessor to extract the month name
 cleaned_data["month_name"] = cleaned_data["InvoiceDate"].dt.month_name()
 
-st.subheader(":point_right: Monthly Activity Loan Summary")
-with st.expander("Summary_Table"):
-    df_sample = cleaned_data[0:5][["Country", "Description", "TotalPrice"]]
-    fig = ff.create_table(df_sample, colorscale="Cividis")
-    st.plotly_chart(fig, use_container_width=True)
+# st.subheader(":point_right: Monthly Activity Loan Summary")
+# with st.expander("Summary_Table"):
+#     df_sample = cleaned_data[0:5][["Country", "Description", "TotalPrice"]]
+#     fig = ff.create_table(df_sample, colorscale="Cividis")
+#     st.plotly_chart(fig, use_container_width=True)
 
-st.markdown("Month wise Activity Table")
-sub_category_Year = pd.pivot_table(data=cleaned_data, 
-                                    values="TotalPrice", 
-                                    index=["Description"],
-                                    columns="month_name")
-st.write(sub_category_Year.style.background_gradient(cmap="Blues"))
+# st.markdown("Month wise Activity Table")
+# sub_category_Year = pd.pivot_table(data=cleaned_data, 
+#                                     values="TotalPrice", 
+#                                     index=["Description"],
+#                                     columns="month_name")
+# st.write(sub_category_Year.style.background_gradient(cmap="Blues"))
 
 
 # Show the cluster data
