@@ -42,7 +42,12 @@ def display_overview(data):
         st.error("Start date should be before the end date.")
         return
     
-    
+   # Sample data if necessary
+    max_points = 1000  # Define a maximum number of points for visualization
+    if len(filtered_data) > max_points:
+        sampled_data = filtered_data.sample(max_points)
+    else:
+        sampled_data = filtered_data
 
     # Create a layout with two columns for the bar and pie charts
     chart_col1, chart_col2 = st.columns(2)
@@ -50,7 +55,7 @@ def display_overview(data):
     with chart_col1:
         # Create a bar plot using Plotly Express
         st.subheader("Total Price by Country")
-        country_price = filtered_data.groupby('Country')['TotalPrice'].sum().reset_index()
+        country_price = sampled_data.groupby('Country')['TotalPrice'].sum().reset_index()
         fig = px.bar(country_price, x='Country', y='TotalPrice',
                      labels={'Country': 'Country', 'TotalPrice': 'Total Price'},
                      text=['${:,.2f}'.format(x) for x in country_price['TotalPrice']],
@@ -60,7 +65,7 @@ def display_overview(data):
     with chart_col2:
         # Create a pie chart using Plotly Express
         st.subheader("Country Distribution of Transactions")
-        country_counts = filtered_data['Country'].value_counts().reset_index()
+        country_counts = sampled_data['Country'].value_counts().reset_index()
         country_counts.columns = ['Country', 'Count']
         fig = px.pie(country_counts, names='Country', values='Count',
                      title='Country Distribution of Transactions',
@@ -84,17 +89,17 @@ def display_overview(data):
     # Sector Data
     with cl1:
         with st.expander("Sector_ViewData"):
-            sector_data = filtered_data.groupby('Country')['TotalPrice'].sum().reset_index()
+            sector_data = sampled_data.groupby('Country')['TotalPrice'].sum().reset_index()
             view_and_download_data(sector_data, "Sector.csv", "Download Sector Data")
     
     # Country Data
     with cl2:
         with st.expander("Country_ViewData"):
-            country_data = filtered_data.groupby('Country')['TotalPrice'].sum().reset_index()
+            country_data = sampled_data.groupby('Country')['TotalPrice'].sum().reset_index()
             view_and_download_data(country_data, "Country.csv", "Download Country Data")
     
     # Time series data aggregation
-    time_series_data = filtered_data.groupby(filtered_data['InvoiceDate'].dt.strftime("%Y-%b"))['TotalPrice'].sum().reset_index()
+    time_series_data = sampled_data.groupby(sampled_data['InvoiceDate'].dt.strftime("%Y-%b"))['TotalPrice'].sum().reset_index()
     
     # Create time series chart
     st.subheader("Time Series Analysis of Total Price")
@@ -109,7 +114,7 @@ def display_overview(data):
     fig2.add_trace(trendline)
     
     # Add an annotation
-    fig2.add_annotation(x="2017-Jul", y=30000, 
+    fig2.add_annotation(x="2017-Jul", y=3000, 
                         text="Significant Decrease", 
                         showarrow=True, arrowhead=1,
                         arrowsize=1.5, arrowwidth=2)

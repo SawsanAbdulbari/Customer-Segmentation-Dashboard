@@ -24,24 +24,24 @@ def load_and_prepare_data():
         parse_dates = ['InvoiceDate']
         
         data = pd.read_csv(
-            r'data\online_retail_II.csv', 
+            r'data/online_retail_II.csv', 
             encoding='latin1',
             dtype=dtypes,
             parse_dates=parse_dates,
             usecols=['Customer ID', 'Invoice', 'InvoiceDate', 'Price', 'Quantity']  # Only load needed columns
         )
         
-        # Vectorized operations instead of apply
+        # Vectorized operations for data cleaning
         cleaned_data = data.dropna(subset=['Customer ID'])
         cleaned_data = cleaned_data[(cleaned_data['Quantity'] > 0) & (cleaned_data['Price'] > 0)]
         cleaned_data['TotalPrice'] = cleaned_data['Quantity'] * cleaned_data['Price']
         
-        # More efficient RFM calculation
+        # Vectorized RFM calculation
         snapshot_date = cleaned_data['InvoiceDate'].max() + pd.Timedelta(days=1)
         rfm = cleaned_data.groupby('Customer ID').agg({
-            'InvoiceDate': lambda x: (snapshot_date - x.max()).days,
-            'Invoice': 'nunique',
-            'TotalPrice': 'sum'
+            'InvoiceDate': lambda x: (snapshot_date - x.max()).days,  # Recency
+            'Invoice': 'nunique',  # Frequency
+            'TotalPrice': 'sum'  # Monetary
         }).reset_index()
         rfm.columns = ['Customer ID', 'Recency', 'Frequency', 'Monetary']
         

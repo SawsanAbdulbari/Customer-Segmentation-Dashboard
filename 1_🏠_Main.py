@@ -1,65 +1,69 @@
 import streamlit as st
+import pandas as pd
 import warnings
 
+# Suppress warnings
 warnings.filterwarnings('ignore')
 
 # Set page configuration
-st.set_page_config(page_title='Customer Segmentation Dashboard', 
-                   page_icon=":bar_chart:",
-                   layout="wide")
+st.set_page_config(
+    page_title='Customer Segmentation Dashboard',
+    page_icon=":bar_chart:",
+    layout="wide"
+)
 
-# Custom CSS for styling
-st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+# # Custom CSS for styling
+# st.markdown("""
+#     <style>
+#     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
     
-    body {
-        font-family: 'Roboto', sans-serif;
-    }
+#     body {
+#         font-family: 'Roboto', sans-serif;
+#     }
     
-    .block-container {
-        padding-top: 1rem;
-    }
+#     .block-container {
+#         padding-top: 1rem;
+#     }
     
-    .stButton>button {
-        background-color: #4CAF50;
-        color: white;
-        transition: background-color 0.3s ease;
-    }
+#     .stButton>button {
+#         background-color: #4CAF50;
+#         color: white;
+#         transition: background-color 0.3s ease;
+#     }
     
-    .stButton>button:hover {
-        background-color: #45a049;
-    }
+#     .stButton>button:hover {
+#         background-color: #45a049;
+#     }
     
-    .stSidebar {
-        background-color: #f0f2f6;
-    }
+#     .stSidebar {
+#         background-color: #f0f2f6;
+#     }
     
-    .stSidebar .stButton>button {
-        background-color: #007BFF;
-        color: white;
-        transition: background-color 0.3s ease;
-    }
+#     .stSidebar .stButton>button {
+#         background-color: #007BFF;
+#         color: white;
+#         transition: background-color 0.3s ease;
+#     }
     
-    .stSidebar .stButton>button:hover {
-        background-color: #0056b3;
-    }
+#     .stSidebar .stButton>button:hover {
+#         background-color: #0056b3;
+#     }
     
-    .stSidebar .stImage {
-        margin-bottom: 1rem;
-    }
+#     .stSidebar .stImage {
+#         margin-bottom: 1rem;
+#     }
     
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 500;
-    }
+#     h1, h2, h3, h4, h5, h6 {
+#         font-weight: 500;
+#     }
     
-    /* Add icon styles */
-    .icon {
-        margin-right: 8px;
-    }
+#     /* Add icon styles */
+#     .icon {
+#         margin-right: 8px;
+#     }
     
-    </style>
-    """, unsafe_allow_html=True)
+#     </style>
+#     """, unsafe_allow_html=True)
 
 # Title and introduction with icon
 st.title(":bar_chart: Customer Segmentation Dashboard")
@@ -78,7 +82,7 @@ st.sidebar.title('Dashboard Information :information_source:')
 
 # Update the image path to the correct location
 image = r"images/output.png"
-st.sidebar.image(image, caption='Image', use_column_width=True)
+st.sidebar.image(image, caption='Image', use_container_width=True)
 
 st.sidebar.write("This dashboard provides insights into customer segmentation using RFM analysis.")
 st.sidebar.write("")
@@ -115,4 +119,12 @@ We extend our gratitude to the team and community for their valuable contributio
 
 # Increase font size for the entire introduction text
 st.markdown('<div style="font-size: 24px;">---</div>', unsafe_allow_html=True)
+
+@st.cache_data
+def load_data():
+    # Simulate a time-consuming data loading operation
+    data = pd.read_csv(r'data/online_retail_II.csv', encoding='latin1')
+    return data
+
+data = load_data()
 

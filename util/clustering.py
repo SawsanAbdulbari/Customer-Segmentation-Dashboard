@@ -26,12 +26,18 @@ def perform_clustering(data):
     
     return rfm
 
-def visualize_clusters(rfm):
+def visualize_clusters(rfm, max_points=5000):
     st.header("Cluster Visualizations")
     
+    # Sample data if necessary
+    if len(rfm) > max_points:
+        sampled_rfm = rfm.sample(max_points)
+    else:
+        sampled_rfm = rfm
+
     # Scatterplot for Recency vs Monetary
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.scatterplot(data=rfm, x='Recency', y='Monetary', hue='Cluster', palette='viridis', s=100, ax=ax)
+    sns.scatterplot(data=sampled_rfm, x='Recency', y='Monetary', hue='Cluster', palette='viridis', s=100, ax=ax)
     plt.title('Recency vs Monetary Value')
     plt.xlabel('Recency (Days)')
     plt.ylabel('Monetary Value')
@@ -39,7 +45,7 @@ def visualize_clusters(rfm):
     
     # Scatterplot for Frequency vs Monetary
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.scatterplot(data=rfm, x='Frequency', y='Monetary', hue='Cluster', palette='viridis', s=100, ax=ax)
+    sns.scatterplot(data=sampled_rfm, x='Frequency', y='Monetary', hue='Cluster', palette='viridis', s=100, ax=ax)
     plt.title('Frequency vs Monetary Value')
     plt.xlabel('Frequency')
     plt.ylabel('Monetary Value')

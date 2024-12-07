@@ -13,7 +13,7 @@ import plotly.figure_factory as ff
 # Title of the dashboard
 st.title("Cluster Visualizations")
 
-data = pd.read_csv(r'data\online_retail_II.csv', encoding='latin1')
+data = pd.read_csv(r'data/online_retail_II.csv', encoding='latin1')
 
 # Clean the data
 cleaned_data = data.dropna(subset=['Customer ID'])      

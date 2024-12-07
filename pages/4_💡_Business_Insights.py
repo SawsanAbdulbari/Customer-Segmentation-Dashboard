@@ -10,8 +10,7 @@ st.title("Business Insights 📊")
 # Load and prepare data
 @st.cache_data
 def load_and_prepare_data():
-    data = pd.read_csv(r'data\online_retail_II.csv', encoding='latin1')
-    
+    data = pd.read_csv(r'data/online_retail_II.csv', encoding='latin1')
     # Clean the data
     cleaned_data = data.dropna(subset=['Customer ID'])      
     cleaned_data['InvoiceDate'] = pd.to_datetime(cleaned_data['InvoiceDate'])
