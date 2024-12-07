@@ -1,65 +1,65 @@
-# Operating System Files
-.DS_Store
-Thumbs.db
+# # Operating System Files
+# .DS_Store
+# Thumbs.db
 
-# IDE/Editor Files
-.vscode/
-.idea/
-*.sublime-workspace
-*.sublime-project
+# # IDE/Editor Files
+# .vscode/
+# .idea/
+# *.sublime-workspace
+# *.sublime-project
 
-# Build Artifacts
-/dist/
-/build/
-/out/
-/target/
+# # Build Artifacts
+# /dist/
+# /build/
+# /out/
+# /target/
 
-# Dependency Directories
-/node_modules/
-/vendor/
+# # Dependency Directories
+# /node_modules/
+# /vendor/
 
-# Environment Files
-.env
-.env.local
-.env.*.local
+# # Environment Files
+# .env
+# .env.local
+# .env.*.local
 
-# Log Files
-*.log
-logs/
+# # Log Files
+# *.log
+# logs/
 
-# Temporary Files
-*.tmp
-*.swp
-*.bak
-*.pid
-*.seed
+# # Temporary Files
+# *.tmp
+# *.swp
+# *.bak
+# *.pid
+# *.seed
 
-# Python Specific
-__pycache__/
-*.py[cod]
-*.pyo
+# # Python Specific
+# __pycache__/
+# *.py[cod]
+# *.pyo
 
-# Java Specific
-*.class
+# # Java Specific
+# *.class
 
-# Node.js Specific
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# # Node.js Specific
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
 
-# JavaScript Specific
-*.min.js
-*.map
+# # JavaScript Specific
+# *.min.js
+# *.map
 
-# Other
-*.lock
-*.lockfile
+# # Other
+# *.lock
+# *.lockfile
 
-# Streamlit Cache
-.streamlit/
+# # Streamlit Cache
+# .streamlit/
 
-# Data Files
-# data/*.csv
+# # Data Files
+# # data/*.csv
 
-# Output Files
-output/
+# # Output Files
+# output/
