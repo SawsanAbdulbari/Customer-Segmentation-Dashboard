@@ -29,7 +29,7 @@ This project is a Customer Segmentation Dashboard that provides insights into cu
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/customer-segmentation-dashboard.git
+   git clone https://github.com/SawsanAbdulbari/customer-segmentation-dashboard.git
    cd customer-segmentation-dashboard
    ```
 
@@ -74,5 +74,6 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 This project is licensed under the MIT License.
 
 ## 📞 Contact
+
 
 For questions or support, please contact [Sawsan Abdulbari](https://www.linkedin.com/in/sawsanabdulbari/).
